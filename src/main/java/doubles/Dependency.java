@@ -23,6 +23,10 @@ public class Dependency {
 	{
 	return i+2;
 	}
+	
+	public int multiply(int i, int y) {
+		return 0;
+	}
 
 	public String getClassNameUpperCase()
 	{
