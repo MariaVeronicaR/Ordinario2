@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class AlumnoDAOoracle implements AlumnoDao {
+public class AlumnoDAOforTest implements AlumnoDao {
 public Connection getConnection()
 {
 	Connection con=null;  

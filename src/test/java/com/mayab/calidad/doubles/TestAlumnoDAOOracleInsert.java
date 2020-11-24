@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 
-import com.mayab.calidad.dao.AlumnoDAOoracle;
+import com.mayab.calidad.dao.AlumnoDAOforTest;
 import com.mayab.calidad.doubles.Alumno;
 
 import static org.junit.Assert.*;
@@ -74,7 +74,7 @@ public class TestAlumnoDAOOracleInsert extends DBTestCase {
 				a.setEmail("prueba@asd.com");
 				
 				
-				AlumnoDAOoracle dao = new AlumnoDAOoracle();
+				AlumnoDAOforTest dao = new AlumnoDAOforTest();
 				dao.addAlumno(a);
 				IDatabaseConnection con = null;
 				int actualRows = 0;
@@ -91,6 +91,71 @@ public class TestAlumnoDAOOracleInsert extends DBTestCase {
 				}
 				assertEquals(actualRows+1, con.getRowCount("alumno"));
 				con.close();
+	}
+	
+	@Override
+	protected IDataSet getDataSet() throws Exception{
+		return new FlatXmlDataSetBuilder().build(new File("src\\resources\\alumno_init.xml"));
+	}
+	
+/*
+	
+	@Test
+	public void testInsertCount() throws Exception {
+		
+				Alumno a = new Alumno();
+				a.setId(2);
+				a.setNombre("Melissa");
+				a.setEdad(20);
+				a.setPromedio(0);
+				a.setEmail("prueba@asd.com");
+				
+				
+				AlumnoDAOoracle dao = new AlumnoDAOoracle();
+				dao.addAlumno(a);
+				IDatabaseConnection con = null;
+				
+				int actualRows = 0;
+				try {
+					con = getConnection();
+					actualRows =  con.getRowCount("alumno");	
+					dao.addAlumno(a);
+					
+					
+				}catch(Exception e) {
+					e.printStackTrace();
+				}
+				assertEquals(actualRows+1, con.getRowCount("alumno"));
+				con.close();
+	}
+	*/
+	
+	@Test
+	public void testinsertAlumnoTest() throws Exception{
+	Alumno a = new Alumno();
+	a.setId(2);
+	a.setNombre("mel");
+	a.setEdad(20);
+	a.setEmail("prueba@prueba.com");
+	a.setPromedio(0);
+	
+	AlumnoDAOforTest dao = new AlumnoDAOforTest();
+	dao.addAlumno(a);
+	
+	try {
+		IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src\\\\resources\\\\alumno_init.xml"));
+	ITable expectedTable = expectedDataSet.getTable("alumno");
+	
+	ITable actualData = getConnection().createQueryTable
+	("result_alumno", "SELECT * FROM alumno");
+			
+	Assertion.assertEquals(expectedTable, actualData);
+	}
+	catch (Exception e)
+	{
+		System.out.println(e.getMessage());
+	}
+	
 	}
 	
 	@Override
