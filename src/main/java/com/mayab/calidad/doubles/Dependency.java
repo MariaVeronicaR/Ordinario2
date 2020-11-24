@@ -1,4 +1,4 @@
-package doubles;
+package com.mayab.calidad.doubles;
 
 public class Dependency {
 	private final SubDependency subDependency;

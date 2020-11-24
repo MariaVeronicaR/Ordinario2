@@ -33,11 +33,45 @@
     <scope>test</scope>
 	</dependency>
 	<dependency>
+ <groupId>com.saucelabs</groupId>
+ <artifactId>saucerest</artifactId>
+ <version>1.0.40</version>
+ <scope>test</scope>
+ </dependency>
+	<dependency>
  	 <groupId>com.oracle.database.jdbc</groupId>
   	<artifactId>ojdbc10</artifactId>
  	 <version>19.3.0.0</version>
 	</dependency>
 	
+	
+	<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-java</artifactId>
+    <version>6.8.2</version>
+</dependency>
+<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-junit</artifactId>
+    <version>6.8.2</version>
+</dependency>
+	<dependency>
+	
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>3.141.59</version>
+</dependency>
+
+
+<dependency>
+    <groupId>org.dbunit</groupId>
+    <artifactId>dbunit</artifactId>
+    <version>2.7.0</version>
+    <scope>test</scope>
+</dependency>
+
+
+
     
   </dependencies>
 </project>

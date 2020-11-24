@@ -4,10 +4,6 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
-
-import doubles.Dependency;
-import doubles.SubDependency;
-
 import org.junit.Before;
 import static org.mockito.Mockito.mock;
 import static org.hamcrest.MatcherAssert.assertThat; 
