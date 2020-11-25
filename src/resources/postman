@@ -1,0 +1,195 @@
+{
+	"id": "bc584164-49e3-402a-8273-0a4108f845c9",
+	"name": "postman",
+	"timestamp": "2020-11-25T22:19:24.033Z",
+	"collection_id": "fe58457e-c060-4286-a005-3c4e7492ebcf",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 5,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "01aa2289-6991-403d-9b58-3b49bc107245",
+			"name": "1. init",
+			"url": "http://localhost:3000/",
+			"time": 23,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"works": true
+			},
+			"testPassFailCounts": {
+				"works": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				23
+			],
+			"allTests": [
+				{
+					"works": true
+				}
+			]
+		},
+		{
+			"id": "a8236949-f81d-4855-a5ca-c7efb893bbf7",
+			"name": "2. register",
+			"url": "http://localhost:3000/api/users/register",
+			"time": 932,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Tiene un token": true
+			},
+			"testPassFailCounts": {
+				"Tiene un token": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				932
+			],
+			"allTests": [
+				{
+					"Tiene un token": true
+				}
+			]
+		},
+		{
+			"id": "b90b881a-09d5-4890-9d78-1254e1aa11c0",
+			"name": "1.iniciarsesion con email",
+			"url": "http://localhost:3000/api/users/tokens/",
+			"time": 1135,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Tiene un token": true
+			},
+			"testPassFailCounts": {
+				"Tiene un token": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1135
+			],
+			"allTests": [
+				{
+					"Tiene un token": true
+				}
+			]
+		},
+		{
+			"id": "600a377e-fd91-4ea4-8db8-4e752cfb8bbf",
+			"name": "movie",
+			"url": "http://localhost:3000/api/movies",
+			"time": 6,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Se creo la pelicula": true
+			},
+			"testPassFailCounts": {
+				"Se creo la pelicula": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Se creo la pelicula": true
+				}
+			]
+		},
+		{
+			"id": "6eb3f582-7003-48c3-96cf-881a78dd3ac7",
+			"name": "getmovie",
+			"url": "http://localhost:3000/api/movies",
+			"time": 8,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Existe una pelicula": true
+			},
+			"testPassFailCounts": {
+				"Existe una pelicula": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				8
+			],
+			"allTests": [
+				{
+					"Existe una pelicula": true
+				}
+			]
+		},
+		{
+			"id": "e7a95baa-cda5-4ba0-a747-21725815bb6b",
+			"name": "getmovie2",
+			"url": "http://localhost:3000/api/movies",
+			"time": 5,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				5
+			],
+			"allTests": [
+				{}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 2109,
+	"collection": {
+		"requests": [
+			{
+				"id": "01aa2289-6991-403d-9b58-3b49bc107245",
+				"method": "GET"
+			},
+			{
+				"id": "a8236949-f81d-4855-a5ca-c7efb893bbf7",
+				"method": "POST"
+			},
+			{
+				"id": "b90b881a-09d5-4890-9d78-1254e1aa11c0",
+				"method": "POST"
+			},
+			{
+				"id": "600a377e-fd91-4ea4-8db8-4e752cfb8bbf",
+				"method": "POST"
+			},
+			{
+				"id": "6eb3f582-7003-48c3-96cf-881a78dd3ac7",
+				"method": "GET"
+			},
+			{
+				"id": "e7a95baa-cda5-4ba0-a747-21725815bb6b",
+				"method": "POST"
+			}
+		]
+	}
+}
