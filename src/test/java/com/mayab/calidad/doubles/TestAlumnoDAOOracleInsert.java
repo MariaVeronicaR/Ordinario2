@@ -34,6 +34,8 @@ import org.junit.Test;
 import org.dbunit.Assertion;
 
 public class TestAlumnoDAOOracleInsert extends DBTestCase {
+	
+	
 	public TestAlumnoDAOOracleInsert(String name)
 	{
 			super(name);
@@ -72,18 +74,16 @@ public class TestAlumnoDAOOracleInsert extends DBTestCase {
 				a.setEdad(20);
 				a.setPromedio(0);
 				a.setEmail("prueba@asd.com");
-				
-				
-				AlumnoDAOforTest dao = new AlumnoDAOforTest();
+
+				DAOOracle dao = new DAOOracle();
 				dao.addAlumno(a);
 				IDatabaseConnection con = null;
 				int actualRows = 0;
 				try {
 					con = getConnection();
-					//System.out.println(con.getRowCount("alumno"));
 					actualRows =  con.getRowCount("alumno");
 					
-					dao.addAlumno(a);
+				dao.addAlumno(a);
 					
 					
 				}catch(Exception e) {
@@ -92,74 +92,33 @@ public class TestAlumnoDAOOracleInsert extends DBTestCase {
 				assertEquals(actualRows+1, con.getRowCount("alumno"));
 				con.close();
 	}
-	
-	@Override
-	protected IDataSet getDataSet() throws Exception{
-		return new FlatXmlDataSetBuilder().build(new File("src\\resources\\alumno_init.xml"));
-	}
-	
-/*
-	
+
 	@Test
-	public void testInsertCount() throws Exception {
-		
+	public void testDelete() throws Exception
+	{
 				Alumno a = new Alumno();
-				a.setId(2);
-				a.setNombre("Melissa");
-				a.setEdad(20);
-				a.setPromedio(0);
-				a.setEmail("prueba@asd.com");
-				
-				
-				AlumnoDAOoracle dao = new AlumnoDAOoracle();
-				dao.addAlumno(a);
+				DAOOracle otrodao = new DAOOracle();
 				IDatabaseConnection con = null;
-				
 				int actualRows = 0;
 				try {
 					con = getConnection();
-					actualRows =  con.getRowCount("alumno");	
-					dao.addAlumno(a);
-					
-					
-				}catch(Exception e) {
+					actualRows = con.getRowCount("alumno");
+					otrodao.deleteAlumno(a);					
+				}
+				catch(Exception e) {
 					e.printStackTrace();
 				}
-				assertEquals(actualRows+1, con.getRowCount("alumno"));
+				assertEquals(actualRows-1, con.getRowCount("alumno"));
 				con.close();
 	}
-	*/
-	
-	@Test
-	public void testinsertAlumnoTest() throws Exception{
-	Alumno a = new Alumno();
-	a.setId(2);
-	a.setNombre("mel");
-	a.setEdad(20);
-	a.setEmail("prueba@prueba.com");
-	a.setPromedio(0);
-	
-	AlumnoDAOforTest dao = new AlumnoDAOforTest();
-	dao.addAlumno(a);
-	
-	try {
-		IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src\\\\resources\\\\alumno_init.xml"));
-	ITable expectedTable = expectedDataSet.getTable("alumno");
-	
-	ITable actualData = getConnection().createQueryTable
-	("result_alumno", "SELECT * FROM alumno");
-			
-	Assertion.assertEquals(expectedTable, actualData);
-	}
-	catch (Exception e)
-	{
-		System.out.println(e.getMessage());
-	}
-	
-	}
-	
+
 	@Override
-	protected IDataSet getDataSet() throws Exception{
-		return new FlatXmlDataSetBuilder().build(new File("src\\resources\\alumno_init.xml"));
+	protected IDataSet getDataSet() throws Exception {
+		// TODO Auto-generated method stub
+		
+		return new FlatXmlDataSetBuilder().build(new File("/my-app/src/resources/alumno.xml"));
 	}
 }
+	
+
+

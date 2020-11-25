@@ -6,26 +6,26 @@ import java.util.HashMap;
 public class DAOOracle implements DAO{
 	HashMap<Integer,Alumno> registrosAlumnos= new HashMap<Integer,Alumno>();
 
-	@Override
+	
 	public void addAlumno(Alumno a) {
 		// TODO Auto-generated method stub
 		registrosAlumnos.put(a.getId(), a);	
 		
 	}
 
-	@Override
+	
 	public void deleteAlumno(Alumno a) {
 		// TODO Auto-generated method stub
 		registrosAlumnos.remove(a.getId());		
 		
 	}
-@Override
-	public Alumno getAlumno(int id) {
+	
+	public String getAlumno(int id) {
 		// TODO Auto-generated method stub
-		return registrosAlumnos.get(id);
+		String auxi=registrosAlumnos.get(id).toString();
+		return auxi;
 	}
 
-@Override
 public void updatePromedio(Alumno a, float NuevoPromedio) {
 	registrosAlumnos.get(a.getId()).setPromedio(NuevoPromedio);
 }
@@ -36,6 +36,25 @@ public void updatePromedio(Alumno a, float NuevoPromedio) {
 		// TODO Auto-generated method stub
 		return registrosAlumnos.size();	
 		}
+
+	@Override
+	public void addAlumno(com.mayab.calidad.doubles.Alumno a) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteAlumno(com.mayab.calidad.doubles.Alumno a) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updatePromedio(com.mayab.calidad.doubles.Alumno a, float NuevoPromedio) {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 	
 	
