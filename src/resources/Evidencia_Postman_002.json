@@ -53,7 +53,7 @@
 						"id": "c2dea830-c4ac-496d-97fe-01ae930f9d12",
 						"exec": [
 							"let date = Date.now();\r",
-							"let email = 'andoni' + date + '@outlook.com';\r",
+							"let email = 'm' + date + '@asd.com';\r",
 							"pm.environment.set('userEmail', email);"
 						],
 						"type": "text/javascript"
@@ -79,7 +79,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"{{userEmail}}\",\r\n    \"password\": \"abcd1234\"\r\n}",
+					"raw": "{\r\n    \"email\": \"{{userEmail}}\",\r\n    \"password\": \"1234\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -126,7 +126,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"{{userEmail}}\",\r\n    \"password\": \"abcd1234\"\r\n}",
+					"raw": "{\r\n    \"email\": \"{{userEmail}}\",\r\n    \"password\": \"1234\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -150,177 +150,6 @@
 			},
 			"response": []
 		},
-		{
-			"name": "4.Movies",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "dcfaef42-97f5-4678-97fd-7a7b28152867",
-						"exec": [
-							"pm.test('Se creo la pelicula', function(){\r",
-							"    pm.response.to.have.status(201);\r",
-							"    \r",
-							"})"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer {{token}}",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"Avatar\",\r\n    \"year\": 2009,\r\n    \"owner\": {{userID}}\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/api/movies",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"movies"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "5. GetMovies",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "bbdef979-9d52-4b60-baa5-b77951002cd6",
-						"exec": [
-							"pm.test('Existe una pelicula', function(){\r",
-							"    pm.response.to.have.status(200);\r",
-							"    const {data} = pm.response.json();\r",
-							"    pm.expect(data.length).to.eql(1);\r",
-							"\r",
-							"})"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer {{token}}",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "http://localhost:3000/api/movies",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"movies"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "6. Movie2",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer {{token}}",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"Avengers\",\r\n    \"year\": 2019,\r\n    \"owner\": {{userID}}\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/api/movies",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"movies"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "7. PeliculasAgain",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "aefd27fd-4c6d-4f45-8ec6-fd172b43169f",
-						"exec": [
-							"pm.test('Existe dos pelicula', function(){\r",
-							"    pm.response.to.have.status(200);\r",
-							"    const {data} = pm.response.json();\r",
-							"    pm.expect(data.length).to.eql(2);\r",
-							"\r",
-							"})"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"type": "text",
-						"value": "Bearer {{token}}"
-					}
-				],
-				"url": {
-					"raw": "http://localhost:3000/api/movies",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"movies"
-					]
-				}
-			},
-			"response": []
-		}
-	],
+		
 	"protocolProfileBehavior": {}
 }
