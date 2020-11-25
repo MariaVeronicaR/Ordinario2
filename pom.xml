@@ -64,6 +64,12 @@
 
 
 <dependency>
+    <groupId>com.github.appium</groupId>
+    <artifactId>java-client</artifactId>
+    <version>7.3.0</version>
+</dependency>
+
+<dependency>
     <groupId>org.dbunit</groupId>
     <artifactId>dbunit</artifactId>
     <version>2.7.0</version>
@@ -74,4 +80,17 @@
 
     
   </dependencies>
+  
+   <repositories>
+  <repository>
+    <id>jcenter</id>
+    <name>bintray</name>
+    <url>https://jcenter.bintray.com</url>
+  </repository>
+  
+  <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+  </repository>
+</repositories>
 </project>
