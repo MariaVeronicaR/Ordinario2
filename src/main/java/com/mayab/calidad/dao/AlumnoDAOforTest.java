@@ -4,8 +4,20 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.HashMap;
 
 public class AlumnoDAOforTest implements AlumnoDao {
+	public HashMap<Integer, Alumno> registros = new HashMap<Integer, Alumno>();
+
+	
+public HashMap<Integer, Alumno> getRegistros() {
+		return registros;
+	}
+
+	public void setRegistros(HashMap<Integer, Alumno> registros) {
+		this.registros = registros;
+	}
+
 public Connection getConnection()
 {
 	Connection con=null;  
@@ -17,7 +29,7 @@ public Connection getConnection()
     
 }
 
-public void addAlumno (com.mayab.calidad.doubles.Alumno a)
+public void addAlumno (Alumno a)
 {
 	Connection con=getConnection();
 	PreparedStatement ps;
