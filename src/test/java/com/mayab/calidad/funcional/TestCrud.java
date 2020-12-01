@@ -80,7 +80,7 @@ public class TestCrud {
     driver.findElement(By.xpath("//div[4]/div/p")).click();
     driver.findElement(By.xpath("//form/button")).click();
 
-   String compare= driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/form/div[4]/div/div")).getText();
+   String compare= driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/form/div[4]/div/p")).getText();
    
 	assertEquals("Nice one!", compare);
   }
