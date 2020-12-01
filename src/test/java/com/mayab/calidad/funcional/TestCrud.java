@@ -26,13 +26,24 @@ public class TestCrud {
 
   @Before
   public void setUp() throws Exception {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\melis\\Music\\quality\\chromedriver_win32\\chromedriver.exe");
-
-    driver = new ChromeDriver();
-    baseUrl = "https://www.google.com/";
-    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+//		System.setProperty("webdriver.chrome.driver", "C:\\Users\\melis\\Music\\quality\\chromedriver_win32\\chromedriver.exe");
+//
+//    driver = new ChromeDriver();
+//    baseUrl = "https://www.google.com/";
+//    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+//    
     
-    
+	  
+	  baseUrl = "https://mern-crud.herokuapp.com";
+			
+			System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+			
+			driver = new ChromeDriver();
+			
+			driver.manage().deleteAllCookies();
+			
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			
   }
   
 
