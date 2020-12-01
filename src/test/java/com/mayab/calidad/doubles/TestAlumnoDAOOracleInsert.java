@@ -86,7 +86,9 @@ public class TestAlumnoDAOOracleInsert extends DBTestCase {
 
 				DAOOracle dao = new DAOOracle();
 				dao.addAlumno(a);
-				IDatabaseConnection con = null;
+				IDatabaseConnection con = getConnection();
+
+		
 				int actualRows = 0;
 				try {
 					con = getConnection();
@@ -107,7 +109,7 @@ public class TestAlumnoDAOOracleInsert extends DBTestCase {
 	{
 				Alumno a = new Alumno();
 				DAOOracle otrodao = new DAOOracle();
-				IDatabaseConnection con = null;
+				IDatabaseConnection con = getConnection();
 				int actualRows = 0;
 				try {
 					con = getConnection();
