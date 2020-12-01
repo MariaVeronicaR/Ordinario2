@@ -24,15 +24,15 @@ public class TestCrud {
 
   @Before
   public void setUp() throws Exception {
-	  System.setProperty("webdriver.chrome.driver", "C:\\Users\\Usuario\\Desktop\\6to_semestre\\Calidad y pruebas de software\\chromedriver_win32\\chromedriver.exe");
-	    driver = new ChromeDriver();
-	    baseUrl = "https://www.google.com/";
-	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-//	  		baseUrl = "https://mern-crud.herokuapp.com";
-//			System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
-//			driver = new ChromeDriver();
-//			driver.manage().deleteAllCookies();
-//			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+//	  System.setProperty("webdriver.chrome.driver", "C:\\Users\\Usuario\\Desktop\\6to_semestre\\Calidad y pruebas de software\\chromedriver_win32\\chromedriver.exe");
+//	    driver = new ChromeDriver();
+//	    baseUrl = "https://www.google.com/";
+//	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	  		baseUrl = "https://mern-crud.herokuapp.com";
+			System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+			driver = new ChromeDriver();
+			driver.manage().deleteAllCookies();
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
   }
 
   
@@ -45,31 +45,15 @@ public class TestCrud {
 	    driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	    driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/form/div[1]/div/input")).click();
 	    driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/form/div[1]/div/input")).clear();
-	    driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/form/div[1]/div/input")).sendKeys("Veronica");
+	    driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/form/div[1]/div/input")).sendKeys("Veeeronica");
 	    driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/form/div[2]/div/input")).click();
 	    driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/form/div[2]/div/input")).clear();
-	    driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/form/div[2]/div/input")).sendKeys("Veronica@gmail.com");
+	    driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/form/div[2]/div/input")).sendKeys("Vereeonica@gmail.com");
 	    driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/form/div[3]/div[1]/div/input")).click();
 	    driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/form/div[3]/div[1]/div/input")).clear();
 	    driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/form/div[3]/div[1]/div/input")).sendKeys("18");
-	    driver.findElement(By.xpath("//div[3]/div[2]/div/div")).click();
-	    driver.findElement(By.xpath("//div[3]/span")).click();
-	    driver.findElement(By.xpath("//form/button")).click();
-	    driver.findElement(By.xpath("//div[4]")).click();
-	    driver.findElement(By.xpath("//div[4]/div/p")).click();
-	    driver.findElement(By.xpath("//div[4]/div/p")).click();
-	    driver.findElement(By.xpath("//div[4]/div/p")).click();
-	    driver.findElement(By.xpath("//div[4]/div/p")).click();
-	    driver.findElement(By.xpath("//div[4]/div/p")).click();
-	    driver.findElement(By.xpath("//div[4]/div/p")).click();
-	    driver.findElement(By.xpath("//div[4]/div/p")).click();
-	    driver.findElement(By.xpath("//div[4]/div/p")).click();
-	    driver.findElement(By.xpath("//div[4]/div/p")).click();
-	    driver.findElement(By.xpath("//div[4]/div/p")).click();
-	    driver.findElement(By.xpath("//div[4]/div/p")).click();
-	    driver.findElement(By.xpath("//div[4]/div/p")).click();
-	    driver.findElement(By.xpath("//div[4]/div/p")).click();
-	    driver.findElement(By.xpath("//form/button")).click();
+	   
+	    driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/form/button")).click();
 	   
 	    
 	    assertEquals("Successfully added!", driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/form/div[4]/div/p")).getText());
