@@ -90,7 +90,7 @@ public class TestAlumnoDAOOracleInsert extends DBTestCase {
 				int actualRows = 0;
 				try {
 					con = getConnection();
-					actualRows =  con.getRowCount("alumno");
+					actualRows =  con.getRowCount("Alumnos");
 					
 				dao.addAlumno(a);
 					
@@ -98,7 +98,7 @@ public class TestAlumnoDAOOracleInsert extends DBTestCase {
 				}catch(Exception e) {
 					e.printStackTrace();
 				}
-				assertEquals(actualRows+1, con.getRowCount("alumno"));
+				assertEquals(actualRows+1, con.getRowCount("Alumnos"));
 				con.close();
 	}
 
