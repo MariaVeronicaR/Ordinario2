@@ -13,7 +13,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.junit.runners.MethodSorters;
 import org.openqa.selenium.support.ui.Select;
 
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+
 
 public class TestCrud {
   private WebDriver driver;
